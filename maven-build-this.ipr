@@ -377,6 +377,7 @@
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/maven-build-this.iml" filepath="$PROJECT_DIR$/maven-build-this.iml" />
     </modules>
   </component>
