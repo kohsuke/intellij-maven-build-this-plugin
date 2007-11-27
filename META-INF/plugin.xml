@@ -1,0 +1,16 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin>
+  <name>Maven "build this module" extension</name>
+  <description>Adds a menu item in the Build menu to run the install goal for the maven module that contains the current file.</description>
+  <version>1.0</version>
+  <vendor email="kk@kohsuke.org" url="https://intellij-plugins.dev.java.net/maven-build-this/">Kohsuke Kawaguchi</vendor>
+  <idea-version since-build="6800"/>
+  <depends>org.jetbrains.idea.maven</depends>
+  <actions>
+    <action id="org.kohsuke.idea.mbt" class="org.kohsuke.idea.mbt.BuildThisAction" text="Install this maven module"
+            description="Run the 'install' goal of the maven module that contains the current file">
+      <!--keyboard-shortcut keymap="$default" first-keystroke="alt F" second-keystroke="alt F"/-->
+      <add-to-group group-id="BuildMenu" anchor="after" relative-to-action="Compile"/>
+    </action>
+  </actions>
+</idea-plugin>
