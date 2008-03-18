@@ -3,8 +3,9 @@
   <name>Maven build-this-module plugin</name>
   <description>Adds a menu item in the Build menu to run the install goal for the maven module that contains the current file.</description>
   <version>1.0</version>
+  <id>org.kohsuke.idea.mbt</id>
   <vendor email="kk@kohsuke.org" url="https://intellij-plugins.dev.java.net/maven-build-this/">Kohsuke Kawaguchi</vendor>
-  <idea-version since-build="6800"/>
+  <idea-version since-build="7757"/>
   <depends>org.jetbrains.idea.maven</depends>
   <actions>
     <action id="org.kohsuke.idea.mbt" class="org.kohsuke.idea.mbt.BuildThisAction" text="Install this maven module"

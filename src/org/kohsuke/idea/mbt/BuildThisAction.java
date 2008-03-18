@@ -6,9 +6,9 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.idea.maven.builder.MavenBuilder;
-import org.jetbrains.idea.maven.builder.executor.MavenBuildParameters;
 import org.jetbrains.idea.maven.state.MavenProjectsState;
+import org.jetbrains.idea.maven.runner.executor.MavenRunnerParameters;
+import org.jetbrains.idea.maven.runner.MavenRunner;
 
 import java.util.Arrays;
 
@@ -24,7 +24,7 @@ public class BuildThisAction extends AnAction {
     public void actionPerformed(AnActionEvent event) {
         Project p = DataKeys.PROJECT.getData(event.getDataContext());
 
-        MavenBuildParameters params = new MavenBuildParameters();
+        MavenRunnerParameters params = new MavenRunnerParameters();
         params.setGoals(Arrays.asList("install"));
 
         VirtualFile pom = findPom(event);
@@ -34,7 +34,7 @@ public class BuildThisAction extends AnAction {
         MavenProjectsState state = p.getComponent(MavenProjectsState.class);
         params.setProfiles(state.getProfiles(pom));
 
-        MavenBuilder builder = p.getComponent(MavenBuilder.class);
+        MavenRunner builder = p.getComponent(MavenRunner.class);
         builder.run(params);
     }
 
